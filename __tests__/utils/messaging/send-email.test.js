@@ -1,4 +1,4 @@
-const { sendEmail } = require("../../../scripts/utils/send-email")
+const { sendEmail } = require("../../../utils/messaging/send-email")
 const nock = require("nock")
 
 /**
@@ -15,10 +15,7 @@ const nock = require("nock")
       return true
     })
     .times(1)
-    .reply(200, {
-      MessageId: "12345",
-      "$metadata": {}
-    });
+    .reply(200);
 
   const sesMessage = () => sesBody
 
@@ -40,11 +37,8 @@ describe("sendEmail", () => {
 
     const { sesNock, sesMessage } = sesNockConstructor()
 
-    const response = await sendEmail(friend)
+    await sendEmail(friend)
 
-    expect(response).toEqual({
-      message: "sent email notification to test@example.com"
-    })
     expect(sesNock.isDone()).toEqual(true)
     expect(sesMessage()).toEqual({
       "Action": "SendEmail",

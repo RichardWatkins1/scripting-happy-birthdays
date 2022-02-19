@@ -1,4 +1,4 @@
-const { fetchFriends } = require("../../../scripts/utils/fetch-friends")
+const { fetchFriends } = require("../../utils/fetch-friends")
 
 describe("fetchFriends", () => {
   it("returns a list of friends", async () => {

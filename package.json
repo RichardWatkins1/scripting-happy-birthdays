@@ -9,7 +9,7 @@
     "test": "yarn jest"
   },
   "dependencies": {
-    "@aws-sdk/client-ses": "^3.51.0",
+    "aws-sdk": "2.1073.0",
     "@fast-csv/parse": "4.3.6",
     "jest": "^27.5.1",
     "nock": "^13.2.4",

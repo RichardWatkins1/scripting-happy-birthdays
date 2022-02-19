@@ -8,6 +8,6 @@ void (async () => await main())()
   .catch((err) => {
     logger.warn({err})
     logger.error("\n\tFailed to message friends");
-    logger.error("\nCaught unhandled error, exiting...");
+    logger.error("\nCaught unhandled error, exiting");
     process.exit(1);
   });

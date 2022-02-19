@@ -1,4 +1,4 @@
-const { findMessageableFriends } = require("../../../scripts/utils")
+const { findMessageableFriends } = require("../../../utils/filtering-friends/find-messageable-friends")
 
 const friends = [
   {
@@ -60,7 +60,7 @@ describe("findMessageableFriends",() => {
 
   it("returns an empty array if no friends data of birth matches provided date", () => {
     const todaysDateMock = new Date("2022/09/10")
-    const result = findMessageableFriends(friends, todaysDateMock)
+    const result = findMessageableFriends({}, todaysDateMock)
 
     expect(result).toEqual([])
   })

@@ -1,7 +1,7 @@
 const logger = require("pino")()
-const { fetchFriends, findMessageableFriends, sendBirthdayMessages } = require("./utils") 
+const { fetchFriends, findMessageableFriends, sendBirthdayMessages } = require("../utils") 
 
-module.exports.main = async () => {
+module.exports.sendBirthdayMessages = async () => {
   try {
     const friends = await fetchFriends()
 
@@ -18,5 +18,7 @@ module.exports.main = async () => {
     return false
   } catch(err) {
     logger.error({message: "Failed to message friends", err})
+
+    throw new Error(err)
   }
 }
