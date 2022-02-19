@@ -1,0 +1,27 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`fetchFriends returns a list of friends 1`] = `
+Array [
+  Object {
+    "contact": "john.doe@foobar.com",
+    "dob": "1982/10/08",
+    "firstName": "John",
+    "lastName": "Doe",
+    "messageType": "email",
+  },
+  Object {
+    "contact": "mary.ann@foobar.com",
+    "dob": "1975/09/11",
+    "firstName": "Mary",
+    "lastName": "Ann",
+    "messageType": "email",
+  },
+  Object {
+    "contact": "bill.shatner@example.com",
+    "dob": "1931/03/20",
+    "firstName": "William",
+    "lastName": "Shatner",
+    "messageType": "email",
+  },
+]
+`;
