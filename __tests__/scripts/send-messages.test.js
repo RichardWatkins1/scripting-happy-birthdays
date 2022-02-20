@@ -84,7 +84,7 @@ describe("sendMessages", () => {
   })
 
   it("throws and error if their is an error sending messages", async () => {
-    // Simulate an error
+    // Simulate an error deep in our code
     global.Date = class extends Date {
       constructor(date) {
         if (date) {
