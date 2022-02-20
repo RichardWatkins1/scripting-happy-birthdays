@@ -1,3 +1,4 @@
+const logger = require("pino")()
 const VALID_DOB_REGEX = /([12]\d{3}\/(0[1-9]|1[0-2])\/(0[1-9]|[12]\d|3[01]))/
 
 /**
@@ -5,5 +6,13 @@ const VALID_DOB_REGEX = /([12]\d{3}\/(0[1-9]|1[0-2])\/(0[1-9]|[12]\d|3[01]))/
  */
 
 module.exports.validDateOfBirth = dob => {
-  return VALID_DOB_REGEX.test(dob)
+  if (VALID_DOB_REGEX.test(dob)) {
+    return true
+  }
+
+  const errorMessage = "Date of birth provided not the valid format of year/month/day"
+
+  logger.error(errorMessage, { dob })
+
+  throw new Error(errorMessage)
 }

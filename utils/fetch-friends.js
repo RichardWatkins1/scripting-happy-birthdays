@@ -4,6 +4,8 @@ const logger = require("pino")()
 const path = require("path")
 
 module.exports.fetchFriends = async () => {
+  logger.info("Fetching friends")
+  
   const stream = csv.parseFile(path.join(__dirname, "friends.csv"), { headers: true, trim: true });
 
   let friends = []

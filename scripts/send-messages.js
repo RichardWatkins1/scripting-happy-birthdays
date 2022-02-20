@@ -19,6 +19,6 @@ module.exports.sendMessages = async () => {
   } catch(err) {
     logger.error({message: "Failed to message friends", err})
 
-    throw new Error(err)
+    throw new Error("Failed to message friends")
   }
 }
