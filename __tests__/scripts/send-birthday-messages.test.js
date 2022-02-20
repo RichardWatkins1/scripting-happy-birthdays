@@ -28,6 +28,7 @@ const nock = require("nock")
 describe("sendBirthdayMessages", () => {
   it("should message friends on their birthday", async () => {
     const mockDate = new Date("2000/03/20");
+    // Mock the global Date
     global.Date = class extends Date {
       constructor(date) {
         if (date) {
@@ -54,6 +55,7 @@ describe("sendBirthdayMessages", () => {
       "Source": "user@example.com",
       "Version": "2010-12-01"
     })
+    // reset the global Date
     global.Date = Date
   })
 })
