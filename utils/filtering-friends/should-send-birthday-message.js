@@ -8,10 +8,12 @@
 const TWENTY_EIGHT_FEB = "02/28" 
 const TWENTY_NINTH_FEB = "02/29"
 
-module.exports.shouldSendBirthdayMessage = (dob, todaysDate = new Date) => {
+module.exports.shouldSendBirthdayMessage = (dob, todaysDate = new Date()) => {
   const [ year, month, day ] = [todaysDate.getUTCFullYear(), todaysDate.getUTCMonth() + 1,  todaysDate.getUTCDate()]
 
   const todaysMonthAndDay = pad(month) + "/" + pad(day)
+
+  console.warn({todaysMonthAndDay})
 
   return  dob.includes(todaysMonthAndDay) || leapersBirthday(dob, todaysMonthAndDay, year)
 }
