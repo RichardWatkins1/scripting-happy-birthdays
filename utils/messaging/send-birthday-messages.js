@@ -9,7 +9,7 @@ module.exports.sendBirthdayMessages = async (friends) => {
         // Add different message types when appropriate
         // case "sms":
         //   const response = await sendSms()
-        //   console.log("sms response", response)
+        //   logger.info("sms response", response)
         default:
           logger.info("Sending Email Via SES", { friend })
           const response = await sendEmail(friend)
