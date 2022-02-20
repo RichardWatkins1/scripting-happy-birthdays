@@ -13,8 +13,6 @@ module.exports.shouldSendBirthdayMessage = (dob, todaysDate = new Date()) => {
 
   const todaysMonthAndDay = pad(month) + "/" + pad(day)
 
-  console.warn({todaysMonthAndDay})
-
   return  dob.includes(todaysMonthAndDay) || leapersBirthday(dob, todaysMonthAndDay, year)
 }
 

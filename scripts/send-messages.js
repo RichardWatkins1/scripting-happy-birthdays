@@ -1,7 +1,7 @@
 const logger = require("pino")()
 const { fetchFriends, findMessageableFriends, sendBirthdayMessages } = require("../utils") 
 
-module.exports.sendBirthdayMessages = async () => {
+module.exports.sendMessages = async () => {
   try {
     const friends = await fetchFriends()
 

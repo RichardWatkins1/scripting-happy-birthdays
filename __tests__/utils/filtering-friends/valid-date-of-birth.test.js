@@ -1,4 +1,4 @@
-const { validDateOfBirth } = require("../../../utils/filtering-friends")
+const { validDateOfBirth } = require("../../../utils/filtering")
 
 describe("validDateOfBirth", () => {
   it("returns true when year/month/day DOB is provided", () => {

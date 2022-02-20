@@ -1,4 +1,4 @@
-const { sendBirthdayMessages } = require("../../scripts/send-birthday-messages")
+const { sendMessages } = require("../../scripts/send-messages")
 const nock = require("nock")
 
 /**
@@ -41,7 +41,7 @@ describe("sendBirthdayMessages", () => {
 
     const { sesNock, sesMessage } = sesNockConstructor()
 
-    const result = await sendBirthdayMessages()
+    const result = await sendMessages()
 
     expect(result).toEqual(true)
     expect(sesNock.isDone()).toEqual(true)

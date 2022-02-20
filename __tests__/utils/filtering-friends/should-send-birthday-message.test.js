@@ -1,4 +1,4 @@
-const { shouldSendBirthdayMessage } = require("../../../utils/filtering-friends/should-send-birthday-message")
+const { shouldSendBirthdayMessage } = require("../../../utils/filtering/should-send-birthday-message")
 
 describe("shouldSendBirthdayMessage", () => {
   describe("matching date of birth", () => {
